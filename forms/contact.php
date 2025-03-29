@@ -1,10 +1,4 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
 
   // Replace contact@example.com with your real receiving email address
   $receiving_email_address = 'nuranhesara321@gmail.com';
@@ -23,15 +17,13 @@
   $contact->from_email = $_POST['email'];
   $contact->subject = $_POST['subject'];
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
   $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+    'host' => 'smtp.gmail.com',  // Change this to your SMTP provider
+    'username' => 'nuranhesara321@gmail.com',  // Your email address
+    'password' => 'ishani2022',  // Your email password or App Password
+    'port' => '587'  // Usually 465 for SSL, 587 for TLS
+);
+
 
   $contact->add_message( $_POST['name'], 'From');
   $contact->add_message( $_POST['email'], 'Email');
